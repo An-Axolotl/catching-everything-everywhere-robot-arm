@@ -19,7 +19,7 @@ the policy runner, the robot model and the ROS nodes for the arm, hand and camer
 
 ## Catching setup
 
-<img src="media/setup.jpg" align="right" width="300">
+<p align="center"><img src="media/setup.jpg" width="420"></p>
 
 | Part | Details |
 |---|---|
@@ -32,8 +32,6 @@ the policy runner, the robot model and the ROS nodes for the arm, hand and camer
 The LEAP hand is mounted on the xArm6 flange (model: `assets/urdf/leap_hand_xarm6_v4/export/robot_v5.urdf`).
 The camera watches the throwing area. Each depth frame is background-filtered to find the thrown object,
 which is published to the policy as a relative position (`/cam/obs_dxdydz`).
-
-<br clear="right">
 
 ## Repository layout
 
