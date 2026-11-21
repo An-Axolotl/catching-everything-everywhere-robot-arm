@@ -9,16 +9,13 @@ Intel RealSense depth camera to track the incoming object.
 This is the minimal release for **running a trained policy on the real robot**: the catching task (`Overhand`),
 the policy runner, the robot model and the ROS nodes for the arm, hand and camera.
 
-<table>
-<tr>
-<td align="center"><b>Real robot</b><br><img src="media/real_catch.gif" height="420"></td>
-<td align="center"><b>Simulation (Isaac Gym, novel objects)</b><br><img src="media/sim_catch.gif" height="420"></td>
-</tr>
-<tr>
-<td align="center">Full video: <a href="media/real_catch.mp4"><code>media/real_catch.mp4</code></a></td>
-<td align="center">Full video (40 s): <a href="media/sim_catch.mp4"><code>media/sim_catch.mp4</code></a></td>
-</tr>
-</table>
+<p align="center"><b>Simulation:</b> the policy catching different thrown objects across parallel Isaac Gym environments<br>
+<img src="media/sim_catch.gif" width="840"><br>
+<a href="media/sim_catch.mp4">media/sim_catch.mp4</a></p>
+
+<p align="center"><b>Real robot:</b> xArm6 + LEAP hand catching a thrown plush<br>
+<img src="media/real_catch.gif" height="420"><br>
+<a href="media/real_catch.mp4">media/real_catch.mp4</a></p>
 
 ## Catching setup
 
@@ -80,7 +77,8 @@ The task commands the hand on `/leaphand_node/cmd_ones` and reads it through the
 ## Run on the real robot
 
 1. **Policy.** Copy a training run into `isaacgymenvs/runs/<RUN_NAME>/`, containing `Overhand.yaml`
-   (the run's task config) and `nn/Overhand.pth` (weights).
+   (the run's task config) and `nn/CatchXArm.pth` (weights; training saves under this name).
+   No trained checkpoint is included in this repo.
 2. **Hardware nodes.** Each in its own terminal, with ROS sourced:
    ```bash
    roscore
